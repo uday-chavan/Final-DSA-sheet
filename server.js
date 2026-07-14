@@ -193,7 +193,7 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'dashboard/dist')));
 
 // The "catchall" handler: for any request that doesn't match API endpoints, send back React's index.html file.
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dashboard/dist/index.html'));
 });
 
