@@ -188,6 +188,15 @@ app.delete('/api/progress/:userId', async (req, res) => {
   }
 });
 
+// Serve static files from the React app build directory
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'dashboard/dist')));
+
+// The "catchall" handler: for any request that doesn't match API endpoints, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dashboard/dist/index.html'));
+});
+
 const PORT = process.env.PORT || 5000;
 initDb().then(() => {
   app.listen(PORT, () => {
