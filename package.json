@@ -5,7 +5,7 @@
     "server": "node server.js",
     "client": "npm --prefix dashboard run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-client": "npm install --prefix dashboard",
+    "install-client": "npm install --prefix dashboard --include=dev",
     "build": "npm run install-client && npm --prefix dashboard run build",
     "start": "node server.js",
     "preview": "npm --prefix dashboard run preview"
