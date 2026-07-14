@@ -1,0 +1,18 @@
+{
+  "name": "dsa-mastery-root",
+  "private": true,
+  "scripts": {
+    "server": "node server.js",
+    "client": "npm --prefix dashboard run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix dashboard run build",
+    "preview": "npm --prefix dashboard run preview"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.22.0"
+  }
+}
